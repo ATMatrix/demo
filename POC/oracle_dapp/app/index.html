@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>ATMatrix - AI on Blockchain demo</title>
+  <style> 
+    .askhistory{width: 400px }
+    .question{background:#DFFFDF;color:#000}
+    .answer{background:#00EC00;color:#000;display:block; width: 200; float:right; text-a;}
+  </style>
+  <script src="./app.js"></script>
+</head>
+<body>
+  <h1>ATMatrix</h1>
+  <h2>人工智能与区块链演示</h2>
+  <h3>1. 链上实时获取web信息: 燃料价格</h3>
+  石油价格: <span class="black"><span id="lpg_price"></span> </span>$
+  <br>柴油价格: <span class="black"><span id="diesel_price"></span> </span>$
+  <br><button id="refresh_price" onclick="App.refreshPrice()">刷新价格</button>
+  <br><br>
+  <span id="status"></span>
+  <br>
+  <h3>2. 链上英语问答</h3>
+  <label for="question">请输入问题:</label><input type="text" id="eng_question" placeholder="e.g., temperature in London"></input>
+  <br><span class="black"><span id="eng_answer"></span> </span>
+  <br><button id="eng_qa" onclick="App.engQA()">提问</button>
+  <br>
+  <h3>3. 小i智能对话</h3>
+  <input type="text" id="xiaoi_question" placeholder="请输入与小i对话的问题"></input>
+  <br><button id="xiaoi_ask" onclick="App.xiaoiAsk()">对话</button>
+  <br><div id="ask_history" class="askhistory"></div>
+  <br><br>
+</body>
+</html>
