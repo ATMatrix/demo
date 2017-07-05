@@ -1,0 +1,43 @@
+{
+  "name": "webcrypto-shim",
+  "main": "webcrypto-shim.js",
+  "version": "0.1.1",
+  "description": "Web Cryptography API shim for legacy browsers",
+  "license": "MIT",
+  "authors": [
+    "Artem S Vybornov <vybornov@gmail.com>"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/vibornoff/webcrypto-shim.git"
+  },
+  "moduleType": [
+    "globals"
+  ],
+  "keywords": [
+    "webcrypto",
+    "shim",
+    "crypto",
+    "mscrypto",
+    "webkitcrypto",
+    "mozcrypto",
+    "subtle",
+    "webkitsubtle",
+    "sha",
+    "hmac",
+    "pbkdf",
+    "aes",
+    "cbc",
+    "gcm",
+    "rsa",
+    "oaep",
+    "pkcs1"
+  ],
+  "ignore": [
+    "**/.*",
+    "bower_components",
+    "node_modules",
+    "package.json",
+    "generate-vectors.html"
+  ]
+}
