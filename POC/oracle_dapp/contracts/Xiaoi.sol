@@ -3,10 +3,10 @@
 
 
 pragma solidity ^0.4.0;
-import "/Users/liujun/Documents/workspace_block/ethereum-api/usingOraclize.sol";
+import "lib/oraclize/ethereum-api/oraclizeAPI.sol";
 
 contract Xiaoi is usingOraclize {
-    
+
     event newAsk(string question);
     event newAskAnswer(string answer);
 
@@ -18,10 +18,9 @@ contract Xiaoi is usingOraclize {
         if (msg.sender != oraclize_cbAddress()) throw;
         newAskAnswer(result);
     }
-    
+
     function ask(string question) payable {
         oraclize_query("URL", question);
     }
-    
-}
 
+}

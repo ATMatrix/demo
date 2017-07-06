@@ -7,10 +7,10 @@
 
 
 pragma solidity ^0.4.0;
-import "/Users/liujun/Documents/workspace_block/ethereum-api/usingOraclize.sol";
+import "lib/oraclize/ethereum-api/oraclizeAPI.sol";
 
 contract DieselPrice is usingOraclize {
-    
+
     uint public DieselPriceUSD;
     uint public lpgPriceUSD;
     string public priceUSD;
@@ -32,11 +32,10 @@ contract DieselPrice is usingOraclize {
         //lpgPriceUSD = parseInt(result.lpg, 2); // let's save it as $ cents
         // do something with the USD Diesel price
     }
-    
+
     function update() payable {
         newOraclizeQuery("Oraclize query was sent, standing by for the answer..");
         oraclize_query("URL", "xml(https://www.fueleconomy.gov/ws/rest/fuelprices).fuelPrices");
     }
-    
-}
 
+}
