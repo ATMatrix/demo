@@ -1,5 +1,5 @@
 # demo
-ATmatrix is a long-term project. At every stages, we build demos for POC, validation.
+ATmatrix is a long-term project. At every stage, we build demos for POC, validation.
 ## Install
 ### Install Etherenum Client
 For test, install [testprc](https://github.com/ethereumjs/testrpc "Install
@@ -7,6 +7,8 @@ testrpc")
 ### Install Oraclize Bridge
 Install [Oraclize Bridge](https://github.com/oraclize/ethereum-bridge "Oraclize
 Bridge")
+### Get Demo Dapp
+Git Clone the source code of POC/oracle_demo Dapp
 ## Run Demo
 ### Start Ethereum Client
 testrpc --mnemonic "my test example" --accounts 50
