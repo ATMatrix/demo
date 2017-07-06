@@ -15,8 +15,11 @@ Git Clone the source code of POC/oracle_demo Dapp
 ### Start Oraclize Bridge
 ```node bridge -H localhost:8545 -a 49 –dev --skip```
 ### Run Demo Dapp
+
 ```cd POC/oracle_dapp```
+
 ```truffle deploy```
+
 ```npm run dev```
 
 Run the [Demo](http://localhost:8080 "Demo") in your Browser!
