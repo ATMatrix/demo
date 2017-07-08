@@ -49,6 +49,7 @@ window.App = {
       account = accounts[1];
     });
 
+    
     //Set wolfram finish call
       var wolfram;
       WolframAlpha.deployed().then(function(instance) {
@@ -83,6 +84,24 @@ window.App = {
               ask_history.innerHTML;
             })
           });
+      DieselPrice.deployed().then(function(instance) {
+        var event = instance.newDieselPrice();
+         event.watch(function(error, result){
+           console.log(result);
+           var value;
+            if (error || result.args.price == "") {
+              value = "小i不知道啦！";
+              }else{
+              value = result.args.price;
+              }
+      var json_value = JSON.parse(value);
+      var diesel_element = document.getElementById("diesel_price");
+      diesel_element.innerHTML = json_value.diesel.valueOf();
+      var lpg_element = document.getElementById("lpg_price");
+      lpg_element.innerHTML = json_value.lpg.valueOf();
+      self.setStatus("价格已更新... ");
+            })
+          });
   },
 
   setStatus: function(message) {
@@ -95,15 +114,7 @@ window.App = {
     var diesel;
     DieselPrice.deployed().then(function(instance) {
       diesel = instance;
-      return diesel.priceUSD.call();
-    }).then(function(value) {
-      console.log("value:"+value);
-      var json_value = JSON.parse(value);
-      var diesel_element = document.getElementById("diesel_price");
-      diesel_element.innerHTML = json_value.diesel.valueOf();
-      var lpg_element = document.getElementById("lpg_price");
-      lpg_element.innerHTML = json_value.lpg.valueOf();
-      self.setStatus("价格已更新... ");
+      return diesel.update( {from: account,gas: 3000000, value: web3.toWei(1, 'ether')});
     }).catch(function(e) {
       console.log(e);
       self.setStatus("Error getting dieselPrice; see log.");
@@ -135,7 +146,7 @@ window.App = {
     var encoding_question = encodeURI(xiaoi_question)
     Xiaoi.deployed().then(function(instance) {
       console.log(xiaoi_question);
-      return instance.ask("json(https://sirayymthe.localtunnel.me/xiaoi/ask?question="+encoding_question+").result", 
+      return instance.ask("json(https://vghbtuupuz.localtunnel.me/xiaoi/ask?question="+encoding_question+").result", 
           {from: account,gas: 3000000, value: web3.toWei(1, 'ether')});
     }).catch(function(e) {
       console.log(e);
