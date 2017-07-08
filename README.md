@@ -11,11 +11,15 @@ Bridge")
 Git Clone the source code of POC/oracle_demo Dapp
 ## Run Demo
 ### Start Ethereum Client
-testrpc --mnemonic "my test example" --accounts 50
+```testrpc --mnemonic "my test example" --accounts 50```
 ### Start Oraclize Bridge
-node bridge -H localhost:8545 -a 49 –dev --skip
+```node bridge -H localhost:8545 -a 49 –dev --skip```
 ### Run Demo Dapp
-truffle deploy
-npm run dev
+
+```cd POC/oracle_dapp```
+
+```truffle deploy```
+
+```npm run dev```
 
 Run the [Demo](http://localhost:8080 "Demo") in your Browser!
