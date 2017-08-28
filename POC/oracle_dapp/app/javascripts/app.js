@@ -146,7 +146,7 @@ window.App = {
     var encoding_question = encodeURI(xiaoi_question)
     Xiaoi.deployed().then(function(instance) {
       console.log(xiaoi_question);
-      return instance.ask("json(https://vghbtuupuz.localtunnel.me/xiaoi/ask?question="+encoding_question+").result", 
+      return instance.ask("json(https://rgfgeptasy.localtunnel.me/xiaoi/ask?question="+encoding_question+").result", 
           {from: account,gas: 3000000, value: web3.toWei(1, 'ether')});
     }).catch(function(e) {
       console.log(e);
